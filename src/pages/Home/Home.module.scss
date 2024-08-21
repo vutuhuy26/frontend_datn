@@ -1,0 +1,49 @@
+.home {
+    overflow: hidden;
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.banner-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-cat-1 {
+    flex: 1;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        transition: all 0.25s linear;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.0999);
+        }
+    }
+}
+
+.banner-cat-2 {
+    flex: 1;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        transition: all 0.25s linear;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.0999);
+        }
+    }
+}

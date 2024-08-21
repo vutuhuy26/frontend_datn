@@ -1,0 +1,37 @@
+.navbar-phone-profile {
+    padding: 0 32px;
+    .options {
+        padding-top: 8px;
+        a {
+            text-decoration: none;
+            display: flex;
+            margin: 10px 0;
+            align-items: center;
+            color: #333;
+
+            span {
+                margin-left: 6px;
+                transition: all linear 0.25s;
+                &:hover {
+                    color: orange;
+                }
+            }
+        }
+
+        .child-not-icon {
+            margin-left: 26px;
+            transition: all linear 0.25s;
+            &:hover {
+                color: orange;
+            }
+        }
+    }
+
+    .title-info-private.active {
+        color: orange;
+    }
+
+    .child-not-icon.active {
+        color: orange;
+    }
+}

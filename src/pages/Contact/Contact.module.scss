@@ -1,0 +1,135 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.banner {
+    background-image: url('../../assets/images/contact.jpg');
+    background-position: 12% 6%;
+    height: 824px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+
+    @include mobile {
+        height: 1260px;
+    }
+}
+
+.contents {
+    max-width: 1240px;
+    position: absolute;
+    inset: 0;
+    padding: 36px 24px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+
+    @include tablet {
+        padding: 36px 0;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.contact-info {
+    flex: 1;
+    background-color: rgb(231 164 98 / 74%);
+    padding: 48px 24px;
+}
+
+.description {
+    padding-bottom: 24px;
+}
+
+.description-p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 16px 0 24px 0;
+    line-height: 1.8;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 48px 24px;
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    color: orange;
+    font-size: 15px;
+    padding: 8px 0;
+
+    input {
+        margin-top: 4px;
+        caret-color: orange;
+        color: orange;
+        outline: none;
+        border: 1px solid #d7d7d7;
+        padding: 12px 0 12px 12px;
+        border-radius: 6px;
+    }
+
+    textarea {
+        margin-top: 4px;
+        border-radius: 6px;
+        caret-color: orange;
+        color: orange;
+        outline: none;
+        border: 1px solid #d7d7d7;
+        min-height: 88px;
+        padding: 12px 0 12px 12px;
+    }
+}
+
+.form-submit {
+    padding-top: 8px;
+    text-align: center;
+
+    button {
+        padding: 10px 32px;
+        background-color: dodgerblue;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+}
+
+.error-field {
+    color: red;
+    font-weight: 300;
+    font-size: 14px;
+    &::before {
+        display: inline;
+        content: '⚠ ';
+    }
+}

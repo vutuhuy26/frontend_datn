@@ -1,0 +1,43 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.my-shop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    // margin: auto;
+    padding: 24px 0;
+
+    @include mobileAndTablet {
+        width: 100%;
+    }
+}
+
+.shop-item {
+    flex-basis: 33.333%;
+    padding: 0 8px;
+    margin: -14px 0;
+
+    @include mobile {
+        flex-basis: 50%;
+    }
+}

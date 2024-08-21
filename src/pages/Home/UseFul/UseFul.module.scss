@@ -1,0 +1,134 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.wrapper-useful {
+    padding: 36px 24px;
+    background-color: #f9f9f9;
+}
+
+.useful-content {
+    max-width: 1240px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-top: 24px;
+}
+
+.wrapper-useful-item {
+    flex-basis: 33.3333333%;
+    text-decoration: none;
+    padding: 0 8px;
+    cursor: pointer;
+
+    @include mobile {
+        flex-basis: 100%;
+    }
+}
+
+.avatar {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+
+    img {
+        border-radius: 4px;
+        width: 100%;
+        height: 215px;
+        object-fit: cover;
+        transition: all 0.25s linear;
+        &:hover {
+            transform: scale(1.0999);
+        }
+    }
+}
+
+.description {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 0 32px;
+    padding: 16px;
+    position: relative;
+    top: -64px;
+}
+
+.heading-item {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.content-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #767676;
+    padding: 12px 0;
+    text-align: justify;
+
+    @include mobileAndTablet {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        padding: 0;
+    }
+}
+
+.link-useful {
+    text-decoration: none;
+    color: #ec78a4;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-more {
+    text-align: center;
+    a {
+        text-decoration: none;
+    }
+
+    @include mobile {
+        button {
+            padding: 0 16px;
+            min-width: 60px;
+            height: 32px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 6px;
+        }
+        a {
+            padding: 0 16px;
+            min-width: 60px;
+            height: 32px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 6px;
+        }
+    }
+}

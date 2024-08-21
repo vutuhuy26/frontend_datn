@@ -1,0 +1,298 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.profile-friend {
+    padding: 16px;
+    width: 100%;
+
+    .friends-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .f-empty {
+            flex: 1;
+
+            .back-btn-profile {
+                cursor: pointer;
+                display: none;
+
+                @include mobile {
+                    display: flex;
+                }
+            }
+        }
+
+        h1 {
+            flex: 1;
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+            color: #333;
+
+            @include mobile {
+                font-size: 1.6rem;
+            }
+        }
+
+        .icon-request {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.88;
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .title-friend-request {
+                position: relative;
+
+                p {
+                    margin-left: 6px;
+                    display: block;
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+
+                .count-request {
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    background-color: red;
+                    color: #fff;
+                    padding: 2px 6px;
+                    border-radius: 999px;
+
+                    @include mobile {
+                        top: -21px;
+                    }
+                }
+            }
+        }
+    }
+
+    .search-friends {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #d7d7d7;
+        border-radius: 6px;
+        position: relative;
+
+        .search-modal {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: calc(100% + 1px);
+            left: 0;
+            right: 0;
+            box-shadow: 0 0px 8px #d7d7d7;
+            background-color: #fff;
+            border-radius: 6px;
+            z-index: 5;
+            padding: 16px;
+            padding-bottom: 0;
+
+            .header-modal {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 16px;
+                border-bottom: 1px solid #d7d7d7;
+
+                h3 {
+                    font-size: 1.5rem;
+                    color: #333;
+                    font-weight: 400;
+                }
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+            }
+
+            .modal-items {
+                flex: 1;
+                padding: 8px 0;
+                min-height: 278px;
+                max-height: 278px;
+                overflow-y: auto;
+
+                .no-search {
+                    font-size: 1.4rem;
+                    color: #333;
+                    font-weight: 400;
+                    text-align: center;
+                    margin-top: 16px;
+                }
+            }
+        }
+
+        input {
+            border: none;
+            border-radius: 6px;
+            padding: 12px 12px 12px 16px;
+            outline: none;
+            font-size: 1.6rem;
+            color: #333;
+            caret-color: orange;
+            flex: 1;
+            width: 100%;
+        }
+
+        .icon-search {
+            width: 48px;
+            padding: 12px 0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f2f3f5;
+            }
+        }
+    }
+
+    .list-friends {
+        margin-top: 16px;
+        padding-bottom: 0;
+
+        @include mobile {
+            padding-bottom: 120px;
+        }
+
+        .no-friends {
+            margin-top: 16px;
+
+            p {
+                font-size: 1.6rem;
+                text-align: center;
+                font-weight: 400;
+                color: #333;
+                opacity: 0.75;
+
+                @include mobile {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    /////// FRIEND ITEM
+    .friend-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+
+        &:hover {
+            background-color: #f2f3f5;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .f-avatar {
+            display: flex;
+            width: 48px;
+            height: 48px;
+
+            @include mobile {
+                width: 36px;
+                height: 36px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 999px;
+                object-fit: cover;
+            }
+        }
+
+        .f-info {
+            margin-left: 16px;
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+            }
+
+            h5 {
+                font-size: 1.6rem;
+                color: #333;
+                font-weight: 500;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+                -webkit-box-orient: vertical;
+
+                @include mobile {
+                    font-size: 1.4rem;
+                }
+            }
+
+            p {
+                margin-top: 4px;
+                font-size: 1.4rem;
+                color: #333;
+                opacity: 0.75;
+
+                @include mobile {
+                    font-size: 1.3rem;
+                }
+            }
+
+            span {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: #d7d7d7;
+                    color: #000;
+                    cursor: pointer;
+                    border-radius: 999px;
+                }
+            }
+        }
+    }
+}

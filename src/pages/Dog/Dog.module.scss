@@ -1,0 +1,30 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.dog-item {
+    flex-basis: 33.333%;
+    padding: 0 8px;
+    margin: -14px 0;
+
+    @include mobile {
+        flex-basis: 50%;
+    }
+}

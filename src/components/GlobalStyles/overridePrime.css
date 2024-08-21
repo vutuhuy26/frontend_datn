@@ -1,0 +1,82 @@
+.p-dropdown .p-dropdown-label.p-placeholder {
+    font-size: 15px;
+}
+
+.p-dropdown-item {
+    font-size: 15px;
+}
+
+.p-slider.p-slider-horizontal {
+    height: 6px;
+}
+
+.p-slider .p-slider-handle {
+    height: 1.45rem;
+    width: 1.45rem;
+}
+
+.p-dropdown-label.p-inputtext {
+    font-size: 1.5rem;
+}
+
+.p-galleria-thumbnail-item {
+    flex: unset !important;
+    padding: 0 8px;
+}
+
+.p-tabview-title {
+    font-size: 1.5rem;
+}
+
+.p-rating .p-rating-item .p-rating-icon {
+    font-size: 1.6rem;
+}
+
+.p-paginator-icon.pi.pi-angle-right,
+.p-paginator-icon.pi.pi-angle-left,
+.p-paginator-icon.pi.pi-angle-double-right,
+.p-paginator-icon.pi.pi-angle-double-left {
+    font-size: 18px;
+}
+
+.p-paginator-next.p-paginator-element.p-link,
+.p-paginator-prev.p-paginator-element.p-link,
+.p-paginator-last.p-paginator-element.p-link,
+.p-paginator-first.p-paginator-element.p-link {
+    width: 48px;
+    height: 48px;
+}
+
+.p-paginator-page.p-paginator-element.p-link {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+}
+
+.p-dialog-title {
+    font-size: 18px !important;
+}
+
+span.p-dialog-header-close-icon.pi.pi-times {
+    font-size: 16px;
+}
+
+.p-confirm-dialog-message {
+    font-size: 16px;
+}
+
+button.p-button.p-component.p-confirm-dialog-reject.p-button-text {
+    font-size: 16px;
+}
+
+button.p-button.p-component.p-confirm-dialog-accept {
+    font-size: 16px;
+}
+
+.p-toast-message {
+    width: 300px !important;
+}
+/* 
+.p-tabview-nav {
+    justify-content: space-between;
+} */

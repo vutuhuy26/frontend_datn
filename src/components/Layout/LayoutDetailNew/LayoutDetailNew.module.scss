@@ -1,0 +1,237 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.bg-new {
+    display: flex;
+}
+
+.bg-info {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        color: #c2c2bf;
+        font-size: 1.4rem;
+    }
+
+    .heading {
+        font-size: 2.8rem;
+        margin-top: 8px;
+
+        @include mobile {
+            font-size: 1.8rem;
+        }
+    }
+
+    .line {
+        width: 32px;
+        height: 3px;
+        background-color: #c2c2bf;
+        margin-top: 14px;
+        border-radius: 6px;
+    }
+}
+
+.contents {
+    display: flex;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1240px;
+    margin: auto;
+    display: flex;
+    padding: 36px 8px;
+}
+
+.bar {
+    flex-basis: 25%;
+    padding-right: 16px;
+
+    @include mobile {
+        display: none;
+    }
+}
+
+.new-detail {
+    flex-basis: 75%;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    flex-wrap: wrap;
+    box-shadow: 0 1px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: opacity 0.3s, box-shadow 0.5s, transform 0.3s;
+
+    &:hover {
+        box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    @include mobile {
+        flex-basis: 100%;
+    }
+}
+
+.wrapper-detail {
+    padding: 32px 24px 16px 32px;
+
+    .descriptions {
+        p,
+        em,
+        span {
+            color: #333;
+        }
+    }
+
+    @include mobile {
+        padding: 32px 12px 16px 12px;
+    }
+}
+
+.description-detail {
+    .title-description {
+        font-weight: 500;
+        font-size: 1.8rem;
+    }
+    p {
+        margin: 12px 0;
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+}
+
+.social {
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.social-item {
+    text-decoration: none;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+
+    @include mobile {
+        min-width: 124px;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+
+    + .social-item {
+        margin-left: 12px;
+
+        @include mobile {
+            margin-left: 0;
+            margin-top: 8px;
+        }
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.comments {
+    padding-top: 24px;
+}
+
+.header-rate {
+    padding: 16px 0;
+
+    .tab-view-rate-heading {
+        font-size: 1.8rem;
+    }
+
+    .sub-heading-rate {
+        font-size: 1.5rem;
+    }
+}
+
+.form-heading-rate {
+    font-size: 1.8rem;
+}
+
+.container-form-rate {
+    border: 3px solid orange;
+    padding: 14px 28px 48px 28px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+
+    label {
+        margin-bottom: 4px;
+        font-size: 1.5rem;
+    }
+
+    input {
+        padding: 8px 0 8px 10px;
+        outline: none;
+        border: 1px solid #d7d7d7;
+        border-radius: 4px;
+    }
+}
+
+.submit-rate {
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: dodgerblue;
+    color: #fff;
+    margin-top: 16px;
+    font-weight: bold;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.heading-menu-similar {
+    margin-top: 24px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: 8px;
+    display: inline-block;
+    border-bottom: 2px solid #d7d7d7;
+}

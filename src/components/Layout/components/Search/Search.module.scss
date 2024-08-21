@@ -1,0 +1,130 @@
+.search {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    visibility: hidden;
+}
+
+.wrapper {
+    width: 450px;
+    transform: translateX(450px);
+    padding: 16px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: all ease 0.3s;
+    z-index: 11;
+}
+
+.heading {
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 8px;
+    padding: 12px 0;
+}
+
+.input-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d7d7d7;
+    border-radius: 999px;
+    padding-left: 16px;
+    input {
+        width: 100%;
+        outline: none;
+        border: none;
+        padding: 12px 12px 12px 0;
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 14px;
+        color: #555;
+    }
+}
+
+.loading-input {
+    animation: loading linear 0.5s infinite;
+}
+
+.line-search {
+    height: 1px;
+    background-color: #d7d7d7;
+    width: 100%;
+    margin: 16px 0;
+}
+
+.result-search {
+    overflow-y: auto;
+    height: calc(100vh - 152px);
+}
+
+.result-item {
+    display: flex;
+    text-decoration: none;
+    color: #333;
+    align-items: center;
+    padding: 14px;
+    border-radius: 4px;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #d7d7d7;
+    }
+}
+
+.name-item {
+    padding-left: 8px;
+    padding-right: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.price-item {
+    font-size: 1.4rem;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+}
+
+.preview {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-shrink: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 999px;
+    }
+}
+
+.message-noti {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

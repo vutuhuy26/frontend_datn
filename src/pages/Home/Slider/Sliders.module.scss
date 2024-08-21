@@ -1,0 +1,134 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.slider-img {
+    position: relative;
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.info {
+    // width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    margin-left: 16px;
+    cursor: pointer;
+}
+.title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+
+    @include tablet {
+        font-size: 2.4rem;
+    }
+
+    @include mobile {
+        font-size: 1.2rem;
+        margin-top: 12px;
+    }
+}
+
+.heading {
+    font-size: 6.4rem;
+    margin-top: 24px;
+    line-height: 1;
+
+    @include tablet {
+        font-size: 4.8rem;
+    }
+
+    @include mobile {
+        font-size: 1.8rem;
+        margin-top: 12px;
+    }
+}
+
+.subheading {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 24px;
+
+    @include tablet {
+        font-size: 1.5rem;
+    }
+
+    @include mobile {
+        font-size: 1rem;
+        margin-top: 12px;
+    }
+}
+
+.wrap-description {
+    width: 100%;
+}
+
+.description {
+    width: 70%;
+    margin-top: 24px;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.5;
+
+    @include tablet {
+        font-size: 1.5rem;
+    }
+
+    @include mobile {
+        font-size: 1rem;
+        margin-top: 12px;
+    }
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 24px;
+
+    @include mobile {
+        margin-top: 8px;
+
+        button {
+            padding: 0 16px;
+            min-width: 60px;
+            height: 32px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 6px;
+        }
+        a {
+            padding: 0 16px;
+            min-width: 60px;
+            height: 32px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 6px;
+        }
+    }
+}

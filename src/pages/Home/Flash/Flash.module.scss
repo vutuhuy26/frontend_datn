@@ -1,0 +1,84 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.flash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 42px 36px;
+    background-color: var(--flash-color);
+    margin-top: -6px;
+
+    @include mobileAndTablet {
+        flex-wrap: wrap;
+    }
+}
+
+.flash-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 36px;
+
+    @include tablet {
+        padding: 16px 0;
+        flex-basis: 50%;
+    }
+
+    @include mobile {
+        flex-basis: 100%;
+        padding: 12px 0;
+    }
+}
+
+.flash-icon {
+    font-size: 36px;
+    display: flex;
+    color: var(--white-color);
+    padding-right: 14px;
+    @include mobile {
+        font-size: 28px;
+    }
+}
+
+.title {
+    color: var(--white-color);
+    font-size: 22px;
+    font-weight: 600;
+
+    @include mobileAndTablet {
+        width: 200px;
+    }
+
+    @include mobile {
+        font-size: 18px;
+    }
+}
+
+.description {
+    font-size: 14px;
+    color: var(--white-color);
+    font-weight: 300;
+
+    @include mobile {
+        font-size: 12px;
+    }
+}

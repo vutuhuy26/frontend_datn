@@ -1,0 +1,251 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.contents {
+    display: flex;
+    width: 1260px;
+    max-width: 1260px;
+    margin: auto;
+
+    @include mobileAndTablet {
+        width: unset;
+    }
+}
+
+// navbar
+.nav-bar {
+    flex-basis: 25%;
+    flex-shrink: 0;
+    padding-left: 8px;
+    margin-bottom: 32px;
+
+    @include mobileAndTablet {
+        display: none;
+    }
+}
+
+// detail
+
+.detail {
+    flex-basis: 75%;
+    padding-top: 32px;
+    overflow: hidden;
+
+    @include mobileAndTablet {
+        flex-basis: 100%;
+    }
+}
+
+.detail-wrapper {
+    display: flex;
+    width: 100%;
+
+    @include mobileAndTablet {
+        flex-direction: column;
+    }
+}
+
+.slider {
+    flex: 1;
+    padding: 16px;
+}
+
+.title {
+    color: darkgray;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.line {
+    height: 3px;
+    display: block;
+    margin: 16px 0;
+    width: 32px;
+    background-color: grey;
+}
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.description {
+    font-weight: 300;
+    font-size: 1.6rem;
+    margin-top: 4px;
+}
+
+.name-pro {
+    font-size: 26px;
+    color: #000;
+    max-width: 80%;
+}
+
+.info-actions {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+
+    .count {
+        display: flex;
+        align-items: center;
+        border: 1px solid #d7d7d7;
+
+        .p_3,
+        .p_1 {
+            padding: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .p_2 {
+            width: 40px;
+            padding: 8px 0;
+            text-align: center;
+            border-left: 1px solid #d7d7d7;
+            border-right: 1px solid #d7d7d7;
+        }
+    }
+}
+
+.add-to-cart {
+    button {
+        border: none;
+        padding: 10px 16px;
+        background-color: orange;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-left: 24px;
+        cursor: pointer;
+    }
+}
+
+.info {
+    flex: 1;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.line-hint {
+    height: 1px;
+    border: 1px dashed #d7d7d7;
+    margin-top: 52px;
+}
+
+.note {
+    font-size: 14px;
+    color: #333;
+    font-weight: 300;
+    padding-top: 6px;
+}
+
+.spacer-w {
+    height: 1px;
+    background-color: #d7d7d7;
+    margin: 16px;
+}
+
+// tabview
+
+.wrapper-tab-sub-description {
+    p,
+    div,
+    strong,
+    ul,
+    li,
+    ol {
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+    }
+}
+
+.tab-view {
+    padding: 0 16px;
+}
+
+.description-tab-view {
+    font-size: 1.6rem;
+    padding-bottom: 16px;
+}
+
+.header-rate {
+    padding: 16px 0;
+
+    .tab-view-rate-heading {
+        font-size: 1.8rem;
+    }
+
+    .sub-heading-rate {
+        font-size: 1.6rem;
+        margin-top: 8px;
+    }
+}
+
+.form-heading-rate {
+    font-size: 1.8rem;
+}
+
+.container-form-rate {
+    border: 3px solid orange;
+    padding: 14px 28px 48px 28px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+
+    label {
+        margin-bottom: 4px;
+        font-size: 1.5rem;
+    }
+
+    input {
+        padding: 8px 0 8px 10px;
+        outline: none;
+        border: 1px solid #d7d7d7;
+        border-radius: 4px;
+    }
+}
+
+.submit-rate {
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: dodgerblue;
+    color: #fff;
+    margin-top: 16px;
+    font-weight: bold;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.heading-menu-similar {
+    margin-top: 24px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: 8px;
+    display: inline-block;
+    border-bottom: 2px solid #d7d7d7;
+}

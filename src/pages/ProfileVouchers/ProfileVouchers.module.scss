@@ -1,0 +1,102 @@
+$mobile-width: 739px;
+$tablet-width: 1023px;
+
+@mixin mobileAndTablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+.profile-voucher {
+    width: 100%;
+    padding: 16px 48px;
+}
+
+.all-vouchers {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 16px;
+
+        .heading {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+
+            .back-btn-profile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 16px;
+                cursor: pointer;
+                display: none;
+
+                @include mobile {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .contents {
+        .searching {
+            padding: 32px 0;
+            display: flex;
+            align-items: center;
+            background-color: #f2f3f5;
+            justify-content: center;
+
+            @include mobile {
+                flex-direction: column;
+            }
+
+            .input-wrapper {
+                display: flex;
+                align-items: center;
+                border: 1px solid #d7d7d7;
+                margin: 0 6px 0 12px;
+                background-color: #fff;
+
+                @include mobile {
+                    margin: 12px 0;
+                }
+            }
+
+            span {
+                font-weight: 300;
+            }
+            input {
+                padding: 12px 12px 12px 14px;
+                border: none;
+                background-color: transparent;
+                outline: none;
+                min-width: 350px;
+                font-size: 1.5rem;
+            }
+
+            button {
+                min-width: 88px;
+                border: none;
+                background-color: orange;
+                color: #fff;
+                font-size: 1.5rem;
+                padding: 10px 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
